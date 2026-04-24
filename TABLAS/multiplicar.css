@@ -1,0 +1,165 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(135deg, #a1c4fd, #c2ffd8);
+    overflow-x: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 🎨 DECORACIONES ANIMADAS */
+.decoracion {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.estrella {
+    position: absolute;
+    font-size: 25px;
+    animation: flotar 6s infinite linear;
+}
+
+/* posiciones diferentes */
+.estrella:nth-child(1) { left: 10%; animation-delay: 0s; }
+.estrella:nth-child(2) { left: 30%; animation-delay: 2s; }
+.estrella:nth-child(3) { left: 60%; animation-delay: 4s; }
+.estrella:nth-child(4) { left: 80%; animation-delay: 1s; }
+
+@keyframes flotar {
+    0% { transform: translateY(100vh); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* 🎮 BOTÓN TIPO JUEGO */
+.btn-probar {
+    background: #ff9f43;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px #e07b2d;
+    transition: 0.2s;
+}
+
+.btn-probar:hover {
+    transform: scale(1.05);
+}
+
+.btn-probar:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px #e07b2d;
+}
+
+/* 🎮 CARD tipo app */
+.card {
+    background: white;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 25px;
+    max-width: 420px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    animation: aparecer 0.8s ease;
+}
+
+@keyframes aparecer {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+th {
+    background: #6c5ce7;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    transition: 0.3s;
+}
+
+/* efecto juego */
+tbody tr:hover {
+    background: #ffeaa7;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .card {
+        width: 95%;
+    }
+
+    .btn-probar {
+        width: 100%;
+    }
+}
+
+/* ✏️ CAJA DE TEXTO ESTILO INFANTIL */
+.input-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.input-group label {
+    font-size: 16px;
+    color: #333;
+}
+
+/* input bonito */
+.input-group input {
+    padding: 12px 15px;
+    border-radius: 20px;
+    border: 3px solid #74b9ff;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    width: 80%;
+    max-width: 250px;
+    transition: 0.3s;
+    background: #f0f8ff;
+}
+
+/* efecto al enfocar */
+.input-group input:focus {
+    border-color: #ff7675;
+    background: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 118, 117, 0.5);
+}
+
+/* efecto cuando escribe */
+.input-group input:not(:placeholder-shown) {
+    border-color: #55efc4;
+}
